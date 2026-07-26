@@ -1,147 +1,279 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join TRADE WITH SUNIL</title>
-  <meta name="description" content="Join our high-accuracy stock/forex tips Telegram channel. Limited spots. 100% free demo.">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0e0e0e;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      animation: fadeIn 1s ease-in;
-    }
+<meta charset="UTF-8">
+<title> Pankaj Official | Learn More Earn More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+<style>
 
-    .container {
-      background: #1a1a1a;
-      padding: 30px 20px;
-      max-width: 420px;
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,255,150,0.2);
-      text-align: center;
-      animation: fadeUp 1s ease-out;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins","Segoe UI",sans-serif;
+}
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+body{
+  min-height:100vh;
+  background:linear-gradient(160deg,#0f1f1a,#132b24,#0c1815);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#ffffff;
+}
 
-    .logo {
-      width: 100px;
-      margin-bottom: 20px;
-      border-radius: 50%;
-      border: 2px solid #00ffaa;
-    }
+.wrapper{
+  width:100%;
+  max-width:430px;
+  background:linear-gradient(160deg,#162e27,#0e211c);
+  border-radius:28px;
+  padding:30px 24px 35px;
+  box-shadow:0 25px 70px rgba(0,0,0,0.6);
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+}
 
-    h1 {
-      font-size: 1.6rem;
-      color: #00ffaa;
-      margin-bottom: 10px;
-    }
+/* LOGO */
+.logo{
+  width:115px;
+  height:115px;
+  margin:0 auto;
+  border-radius:50%;
+  padding:6px;
+  background:linear-gradient(135deg,#d4af37,#f6e27a,#d4af37);
+}
 
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #00ffaa;
-      margin: 20px 0 10px;
-    }
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  background:#000;
+}
 
-    .benefit-text {
-      font-size: 0.95rem;
-      margin: 6px 0;
-      color: #ddd;
-    }
+/* TITLE */
+h1{
+  margin-top:20px;
+  font-size:28px;
+  font-weight:700;
+  background:linear-gradient(90deg,#f6e27a,#d4af37);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    p {
-      font-size: 1rem;
-      margin: 10px 0 20px;
-    }
+.tagline{
+  font-size:14px;
+  color:#a9cfc2;
+  margin-top:6px;
+}
 
-    .cta-btn {
-      background-color: #00ffaa;
-      color: #000;
-      border: none;
-      padding: 14px 28px;
-      font-size: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      animation: pulse 1.6s infinite;
-      transition: transform 0.3s ease;
-      margin-top: 20px;
-    }
+/* REDIRECT TIMER BOX */
+.timer-box{
+  margin-top:20px;
+  padding:14px;
+  background:rgba(212,175,55,0.1);
+  border:1px dashed rgba(246,226,122,0.4);
+  border-radius:14px;
+  font-size:14px;
+  color:#f6e27a;
+}
 
-    .cta-btn:hover {
-      transform: scale(1.05);
-    }
+.timer-count{
+  font-weight:700;
+  font-size:16px;
+  color:#ffffff;
+}
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 255, 170, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(0, 255, 170, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 255, 170, 0); }
-    }
+/* INFO BOX */
+.info-box{
+  margin-top:24px;
+  background:rgba(255,255,255,0.04);
+  border-radius:18px;
+  padding:20px;
+  text-align:left;
+  border:1px solid rgba(255,255,255,0.06);
+}
 
-    .countdown {
-      font-size: 0.95rem;
-      margin-top: 15px;
-      color: #ffcc00;
-    }
+.info-box ul{
+  list-style:none;
+}
 
-    .disclaimer {
-      font-size: 0.8rem;
-      color: #888;
-      margin-top: 20px;
-    }
-  </style>
+.info-box li{
+  display:flex;
+  gap:10px;
+  font-size:15px;
+  padding:9px 0;
+  color:#d7efe7;
+}
+
+.info-box li::before{
+  content:"✔";
+  color:#f6e27a;
+  font-weight:700;
+}
+
+/* CTA */
+.cta{
+  margin-top:24px;
+}
+
+.cta a{
+  display:block;
+  padding:17px;
+  font-size:18px;
+  font-weight:600;
+  border-radius:50px;
+  background:linear-gradient(135deg,#d4af37,#f6e27a);
+  color:#0c1815;
+  text-decoration:none;
+  box-shadow:0 18px 40px rgba(212,175,55,0.35);
+  transition:0.3s ease;
+}
+
+.cta a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 22px 50px rgba(212,175,55,0.6);
+}
+
+/* TRUST */
+.trust{
+  margin-top:18px;
+  font-size:13px;
+  color:#9ec9bb;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  margin-top:18px;
+  font-size:11px;
+  color:#7aa99b;
+  line-height:1.6;
+}
+
+/* NETAD BUTTON */
+.netad-btn{
+  margin-top:24px;
+}
+
+.netad-btn a{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:40px;
+  background:rgba(255,255,255,0.05);
+  color:#d4af37;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  border:1px solid rgba(212,175,55,0.3);
+  transition:0.3s ease;
+}
+
+.netad-btn a:hover{
+  background:rgba(212,175,55,0.1);
+  box-shadow:0 10px 25px rgba(212,175,55,0.3);
+}
+
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1037107628718940');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1037107628718940&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  
 </head>
+
 <body>
-  <div class="container">
-    <img src="logo.jpg" alt="Telegram Logo" class="logo" />
-    <h1>Join TRADE WITH SUNIL</h1>
-    <p>🚀 Daily Accurate Calls<br>📈 Free Demo Access<br>🔐 Limited Members Only</p>
 
-    <div class="section-title">Master TRADING STRATEGIES</div>
-    <div class="benefit-text">Learn the TECHNIQUES & INTRADAY STOCK TIPS to Protect your Capital</div>
-    <div class="benefit-text">eLearn the PROCEDURES to Earn More while Investing Lesser Capital</div>
+<div class="wrapper">
 
-    <a href="https://t.me/YourChannelUsername" target="_blank">
-      <button class="cta-btn">Join Free Channel</button>
-    </a>
-
-    <div class="countdown">Redirecting in <span id="timer">10</span> seconds...</div>
-
-    <p class="disclaimer">For educational purposes only. Not SEBI registered. DYOR.</p>
+  <div class="logo">
+    <img src="rochit.jpeg" alt="Learning">
   </div>
 
-  <script>
-    let countdown = 10;
-    const timerEl = document.getElementById("timer");
-    const redirectUrl = "https://t.me/YourChannelUsername";
+  <h1>Pankaj Sir</h1>
+  <div class="tagline">Learn More • Earn More</div>
 
-    const interval = setInterval(() => {
-      countdown--;
-      timerEl.textContent = countdown;
-      if (countdown === 0) {
-        clearInterval(interval);
+  <!-- COUNTDOWN TIMER DISPLAY -->
+  <div class="timer-box">
+    Auto redirecting in <span id="countdown" class="timer-count">15</span> seconds...
+  </div>
+
+  
+  
+  <div class="info-box">
+    <ul>
+      <li>Financial Education & Wealth Mindset</li>
+      <li>Market Basics & Learning Content</li>
+      <li>Beginner Friendly Community</li>
+      <li>No Tips • No Guarantees • Only Learning</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <a href="https://t.me/+XqLC0borGBg5ZjZl" target="_blank" onclick="trackSubscribeEvent()">
+      Join Free Telegram Channel
+    </a>
+  </div>
+
+  <div class="trust">
+    Trusted by learners across India
+  </div>
+
+  <div class="disclaimer">
+    This channel is strictly for educational purposes only.<br>
+    We do not provide investment advice or guaranteed returns.<br>
+    Please consult a financial advisor before making decisions.
+  </div>
+
+  <div class="netad-btn">
+    <a href="https://t.me/+dAEagvqNHo45ZGI1" target="_blank">
+      Ad Managed by ShriRam Media Agency
+    </a>
+  </div>
+
+</div>
+
+<!-- AUTO REDIRECT & PIXEL TRACKING SCRIPT -->
+<script>
+  function trackSubscribeEvent() {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Subscribe');
+    }
+  }
+
+  (function() {
+    var seconds = 15;
+    var redirectUrl = "https://t.me/+XqLC0borGBg5ZjZl";
+    var countdownElement = document.getElementById("countdown");
+
+    var timer = setInterval(function() {
+      seconds--;
+      if (countdownElement) {
+        countdownElement.textContent = seconds;
+      }
+      if (seconds <= 0) {
+        clearInterval(timer);
+        // Direct redirect without tracking event
         window.location.href = redirectUrl;
       }
     }, 1000);
-  </script>
+  })();
+</script>
+
 </body>
 </html>
