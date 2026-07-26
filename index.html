@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join TRADE WITH SUNIL</title>
+  <meta name="description" content="Join our high-accuracy stock/forex tips Telegram channel. Limited spots. 100% free demo.">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      background: #1a1a1a;
+      padding: 30px 20px;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,255,150,0.2);
+      text-align: center;
+      animation: fadeUp 1s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      border: 2px solid #00ffaa;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #00ffaa;
+      margin: 20px 0 10px;
+    }
+
+    .benefit-text {
+      font-size: 0.95rem;
+      margin: 6px 0;
+      color: #ddd;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 10px 0 20px;
+    }
+
+    .cta-btn {
+      background-color: #00ffaa;
+      color: #000;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      animation: pulse 1.6s infinite;
+      transition: transform 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 255, 170, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(0, 255, 170, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 255, 170, 0); }
+    }
+
+    .countdown {
+      font-size: 0.95rem;
+      margin-top: 15px;
+      color: #ffcc00;
+    }
+
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.jpg" alt="Telegram Logo" class="logo" />
+    <h1>Join TRADE WITH SUNIL</h1>
+    <p>🚀 Daily Accurate Calls<br>📈 Free Demo Access<br>🔐 Limited Members Only</p>
+
+    <div class="section-title">Master TRADING STRATEGIES</div>
+    <div class="benefit-text">Learn the TECHNIQUES & INTRADAY STOCK TIPS to Protect your Capital</div>
+    <div class="benefit-text">eLearn the PROCEDURES to Earn More while Investing Lesser Capital</div>
+
+    <a href="https://t.me/YourChannelUsername" target="_blank">
+      <button class="cta-btn">Join Free Channel</button>
+    </a>
+
+    <div class="countdown">Redirecting in <span id="timer">10</span> seconds...</div>
+
+    <p class="disclaimer">For educational purposes only. Not SEBI registered. DYOR.</p>
+  </div>
+
+  <script>
+    let countdown = 10;
+    const timerEl = document.getElementById("timer");
+    const redirectUrl = "https://t.me/YourChannelUsername";
+
+    const interval = setInterval(() => {
+      countdown--;
+      timerEl.textContent = countdown;
+      if (countdown === 0) {
+        clearInterval(interval);
+        window.location.href = redirectUrl;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
