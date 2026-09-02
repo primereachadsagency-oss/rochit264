@@ -1,311 +1,395 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rochit Singh Stocks</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-<meta charset="UTF-8">
-<title> Rochiit </title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-<style>
+    /* Main Card Container */
+    .card {
+      background-color: #161616;
+      border: 1px solid #282828;
+      border-radius: 28px;
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.8s ease-out;
+    }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Poppins","Segoe UI",sans-serif;
-}
+    /* Profile Image */
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid #ffcc00;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+      animation: zoomIn 0.8s ease-out;
+    }
 
-body{
-  min-height:100vh;
-  background:linear-gradient(160deg,#0f1f1a,#132b24,#0c1815);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:#ffffff;
-}
+    /* Title Section */
+    .title-container {
+      text-align: center;
+      margin-bottom: 12px;
+    }
 
-.wrapper{
-  width:100%;
-  max-width:430px;
-  background:linear-gradient(160deg,#162e27,#0e211c);
-  border-radius:28px;
-  padding:30px 24px 35px;
-  box-shadow:0 25px 70px rgba(0,0,0,0.6);
-  text-align:center;
-  border:1px solid rgba(255,255,255,0.05);
-}
+    .title {
+      color: #ffcc00;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
 
-.logo{
-  width:115px;
-  height:115px;
-  margin:0 auto;
-  border-radius:50%;
-  padding:6px;
-  background:linear-gradient(135deg,#d4af37,#f6e27a,#d4af37);
-}
+    .crown {
+      font-size: 20px;
+    }
 
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-  background:#000;
-}
+    /* Subtitle Tag */
+    .tagline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #e0e0e0;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
 
-h1{
-  margin-top:20px;
-  font-size:28px;
-  font-weight:700;
-  background:linear-gradient(90deg,#f6e27a,#d4af37);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
+    .check-icon {
+      background-color: #22c55e;
+      color: #000;
+      font-size: 10px;
+      font-weight: bold;
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.tagline{
-  font-size:14px;
-  color:#a9cfc2;
-  margin-top:6px;
-}
+    /* Info Buttons */
+    .info-btn {
+      width: 100%;
+      background-color: #212121;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
 
-.timer-box{
-  margin-top:20px;
-  padding:14px;
-  background:rgba(212,175,55,0.1);
-  border:1px dashed rgba(246,226,122,0.4);
-  border-radius:14px;
-  font-size:14px;
-  color:#f6e27a;
-}
+    /* Main CTA Join Button */
+    .cta-button {
+      width: 100%;
+      background-color: #0088cc;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 8px 0 20px 0;
+      box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+      animation: pulse 2s infinite;
+      transition: transform 0.2s ease;
+    }
 
-.timer-count{
-  font-weight:700;
-  font-size:16px;
-  color:#ffffff;
-  display:inline-block;
-  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
-}
+    .cta-button:active {
+      transform: scale(0.98);
+    }
 
-.timer-count.tick{
-  transform:scale(1.3);
-}
+    .telegram-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
 
-.info-box{
-  margin-top:24px;
-  background:rgba(255,255,255,0.04);
-  border-radius:18px;
-  padding:20px;
-  text-align:left;
-  border:1px solid rgba(255,255,255,0.06);
-}
+    /* Feature List Items */
+    .feature-item {
+      width: 100%;
+      background-color: #212121;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
 
-.info-box ul{
-  list-style:none;
-}
+    .feature-check {
+      background-color: #22c55e;
+      color: #000;
+      font-size: 11px;
+      font-weight: bold;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-.info-box li{
-  display:flex;
-  gap:10px;
-  font-size:15px;
-  padding:9px 0;
-  color:#d7efe7;
-}
+    /* Footer Links */
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #282828;
+      width: 100%;
+      justify-content: center;
+    }
 
-.info-box li::before{
-  content:"✔";
-  color:#f6e27a;
-  font-weight:700;
-}
+    .footer-links button {
+      background: none;
+      border: none;
+      color: #888888;
+      font-size: 12px;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
 
-.cta{
-  margin-top:24px;
-}
+    .footer-links button:hover {
+      color: #ffffff;
+    }
 
-.cta-btn{
-  display:block;
-  width:100%;
-  padding:17px;
-  font-size:18px;
-  font-weight:600;
-  border-radius:50px;
-  background:linear-gradient(135deg,#d4af37,#f6e27a);
-  color:#0c1815;
-  text-decoration:none;
-  box-shadow:0 18px 40px rgba(212,175,55,0.35);
-  transition:0.3s ease;
-  cursor:pointer;
-  border:none;
-  font-family:"Poppins","Segoe UI",sans-serif;
-}
+    /* Modal (Popup) Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1000;
+      padding: 20px;
+    }
 
-.cta-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 22px 50px rgba(212,175,55,0.6);
-}
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
-.cta-btn:active{
-  transform:scale(0.97);
-}
+    .modal-box {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
 
-.cta-hint{
-  margin-top:8px;
-  font-size:10px;
-  color:#7aa99b;
-  opacity:0.7;
-}
+    .modal-overlay.active .modal-box {
+      transform: scale(1);
+    }
 
-.trust{
-  margin-top:18px;
-  font-size:13px;
-  color:#9ec9bb;
-}
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #2c2c2c;
+    }
 
-.disclaimer{
-  margin-top:18px;
-  font-size:11px;
-  color:#7aa99b;
-  line-height:1.6;
-}
+    .modal-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffcc00;
+    }
 
-.netad-btn{
-  margin-top:24px;
-}
+    .close-btn {
+      background: none;
+      border: none;
+      color: #aaa;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+    }
 
-.netad-btn a{
-  display:inline-block;
-  padding:10px 22px;
-  border-radius:40px;
-  background:rgba(255,255,255,0.05);
-  color:#d4af37;
-  font-size:13px;
-  font-weight:600;
-  text-decoration:none;
-  border:1px solid rgba(212,175,55,0.3);
-  transition:0.3s ease;
-}
+    .close-btn:hover {
+      color: #fff;
+    }
 
-.netad-btn a:hover{
-  background:rgba(212,175,55,0.1);
-  box-shadow:0 10px 25px rgba(212,175,55,0.3);
-}
+    .modal-body {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.6;
+      max-height: 250px;
+      overflow-y: auto;
+    }
 
-</style>
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1082443510876601');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1082443510876601&ev=PageView&noscript=1"
-/></noscript>
-  
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(0, 136, 204, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="wrapper">
+  <div class="card">
+    <img src="https://via.placeholder.com/110" alt="Rochit Singh" class="profile-img" />
 
-  <div class="logo">
-    <img src="rochit.jpeg" alt="Learning">
-  </div>
+    <div class="title-container">
+      <div class="title">
+        <span class="crown">👑</span> ROCHIT SINGH STOCKS <span class="crown">👑</span>
+      </div>
+    </div>
 
-  <h1>Rochit Sir</h1>
-  <div class="tagline">Learn More • Earn More</div>
+    <div class="tagline">
+      <span class="check-icon">✓</span>
+      <span>Trusted by thousands of learners</span>
+    </div>
 
-  <div class="timer-box">
-    Auto redirecting in <span id="countdown" class="timer-count">15</span> seconds...
-  </div>
+    <div class="info-btn">24/7 Updates</div>
+    <div class="info-btn">Free to Join</div>
 
-  <div class="info-box">
-    <ul>
-      <li>Financial Education & Wealth Mindset</li>
-      <li>Market Basics & Learning Content</li>
-      <li>Beginner Friendly Community</li>
-      <li>No Tips • No Guarantees • Only Learning</li>
-    </ul>
-  </div>
-
-  <!-- Single CTA — deeplink first, web fallback -->
-  <div class="cta">
-    <button class="cta-btn" onclick="smartJoin()">
-      Join Free Telegram Channel
-    </button>
-    <div class="cta-hint">Opens Telegram app if installed, otherwise browser</div>
-  </div>
-
-  <div class="trust">
-    Trusted by learners across India
-  </div>
-
-  <div class="disclaimer">
-    This channel is strictly for educational purposes only.<br>
-    We do not provide investment advice or guaranteed returns.<br>
-    Please consult a financial advisor before making decisions.
-  </div>
-
-  <div class="netad-btn">
-    <a href="https://t.me/+dAEagvqNHo45ZGI1" target="_blank">
-      Ad Managed by ShriRam Media Agency
+    <a href="https://t.me/+fuaXs2SEPwUzYmM1" class="cta-button" target="_blank">
+      <svg class="telegram-icon" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 4-1.74 6.68-2.88 8.04-3.44 3.83-1.58 4.62-1.86 5.14-1.87.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.01.21-.02.32z"/>
+      </svg>
+      Join on Telegram
     </a>
+
+    <div class="feature-item">
+      <span class="feature-check">✓</span>
+      <span>Market Insights & Discussions</span>
+    </div>
+
+    <div class="feature-item">
+      <span class="feature-check">✓</span>
+      <span>Learn with Experts</span>
+    </div>
+
+    <div class="feature-item">
+      <span class="feature-check">✓</span>
+      <span>Practical Strategies</span>
+    </div>
+
+    <div class="footer-links">
+      <button onclick="openModal('about')">About Us</button>
+      <button onclick="openModal('terms')">Terms & Conditions</button>
+      <button onclick="openModal('disclaimer')">Disclaimer</button>
+      <button onclick="openModal('contact')">Contact Us</button>
+    </div>
   </div>
 
-</div>
+  <div class="modal-overlay" id="infoModal" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Header</div>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalContent">
+        Content goes here...
+      </div>
+    </div>
+  </div>
 
-<script>
-var DEEPLINK = "tg://join?invite=QS0Se7-A48c4MzA1";
-var WEBLINK = "https://t.me/+QS0Se7-A48c4MzA1";
-var timerRedirected = false;
+  <script>
+    // Content for each link
+    const modalData = {
+      about: {
+        title: "About Us",
+        content: "Welcome to Rochit Singh Stocks. We provide Educational Market Insights, Technical Analysis, and Learning content for stock market enthusiasts."
+      },
+      terms: {
+        title: "Terms & Conditions",
+        content: "All content provided on this channel is for educational purposes only. We are not responsible for any financial profits or losses."
+      },
+      disclaimer: {
+        title: "Disclaimer",
+        content: "Trading and investing in stock markets involves financial risk. Please consult your financial advisor before making any investment decisions."
+      },
+      contact: {
+        title: "Contact Us",
+        content: "For inquiries and support, connect with us on Telegram: <br><br><b>Telegram Link:</b> https://t.me/+fuaXs2SEPwUzYmM1"
+      }
+    };
 
-function trackSubscribeEvent() {
-  if (typeof fbq === 'function') fbq('track', 'Subscribe');
-}
-
-function trackLead() {
-  if (typeof fbq === 'function') fbq('track', 'Lead');
-}
-
-function smartJoin() {
-  trackSubscribeEvent();
-  tryRedirect();
-}
-
-function tryRedirect() {
-  if (timerRedirected) return;
-  timerRedirected = true;
-  window.location.href = DEEPLINK;
-  setTimeout(function() {
-    window.location.href = WEBLINK;
-  }, 1500);
-}
-
-(function() {
-  var seconds = 15;
-  var countdownElement = document.getElementById("countdown");
-
-  var timer = setInterval(function() {
-    seconds--;
-    if (countdownElement) {
-      countdownElement.textContent = seconds;
-      countdownElement.classList.add("tick");
-      setTimeout(function() {
-        countdownElement.classList.remove("tick");
-      }, 300);
+    function openModal(key) {
+      if (modalData[key]) {
+        document.getElementById('modalTitle').innerText = modalData[key].title;
+        document.getElementById('modalContent').innerHTML = modalData[key].content;
+        document.getElementById('infoModal').classList.add('active');
+      }
     }
-    if (seconds <= 0) {
-      clearInterval(timer);
-      trackLead();
-      tryRedirect();
+
+    function closeModal() {
+      document.getElementById('infoModal').classList.remove('active');
     }
-  }, 1000);
-})();
-</script>
+
+    function closeModalOnOutsideClick(e) {
+      if (e.target.classList.contains('modal-overlay')) {
+        closeModal();
+      }
+    }
+  </script>
 
 </body>
 </html>
